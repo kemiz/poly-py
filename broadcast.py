@@ -49,7 +49,9 @@ print(f'Selected: {output_device}')
 with mido.open_input(input_device) as inport:
     outport = mido.open_output(output_device)
     for message in inport:
-        if not(message.type == 'clock'):
+        try:
             print(message)
             for channel in channels:
                 outport.send(message.copy(channel=channel))
+        except:
+            outport.send(message)
