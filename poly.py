@@ -44,9 +44,10 @@ print_devices(mido.get_output_names())
 output_device = mido.get_output_names()[int(input(f'Choose output device [0-{len(mido.get_output_names())-1}]:'))]
 print(f'Selected: {output_device}')
 
-broadcast = input("Enable broadcast (default=True):")
-if (broadcast == ''): broadcast = True
-else: broadcast = bool(broadcast)
+broadcast = input("Enable broadcast [Y/N](default=True):")
+if (broadcast == '' or 'Y' or 'y'): broadcast = True
+if (broadcast == 'N' or 'n'): broadcast = False
+else: broadcast = True
 
 def get_free_voice():
     for voice in voices:

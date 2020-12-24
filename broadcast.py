@@ -18,15 +18,15 @@ print(
 ######################################################################################
 """)
 
-print("A simple tool that allows you to capture midi notes from one source and send them on different channels to a destination to achiece polyphony")
+print("A simple tool that allows you to capture midi notes from one source and send them to a range of channels of a destination")
 
 import mido
 
-no_of_channels = input("Choose number of channels [1-16] (default: 4):")
+no_of_channels = input("Choose number of channels [1-16] (default=4):")
 if (no_of_channels == ''): no_of_channels = 8
 else: no_of_channels = int(no_of_channels)
 
-channel_offset = input("Set channel offset (default: 0):")
+channel_offset = input("Set channel offset (default=0):")
 if (channel_offset == ''): channel_offset = 0 
 else: channel_offset = int(channel_offset)
 
