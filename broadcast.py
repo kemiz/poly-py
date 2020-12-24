@@ -50,7 +50,7 @@ with mido.open_input(input_device) as inport:
     outport = mido.open_output(output_device)
     for message in inport:
         try:
-            if not (message.type == 'clock')
+            if not (message.type == 'clock'):
                 print(message)
                 for channel in channels:
                     outport.send(message.copy(channel=channel))
